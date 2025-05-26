@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   builtins.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaacosta <jaacosta@student.42.fr>          +#+  +:+       +#+        */
+/*   By: arhea <jaacosta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 19:58:07 by jaacosta          #+#    #+#             */
 /*   Updated: 2025/05/26 19:58:08 by jaacosta         ###   ########.fr       */
