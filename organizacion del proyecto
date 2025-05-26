@@ -1,0 +1,41 @@
+minishell/
+├── Makefile
+├── minishell.c                  # Punto de entrada principal
+├── includes/
+│   ├── minishell.h              # Header principal
+│   ├── lexer.h
+│   ├── parser.h
+│   ├── executor.h
+│   ├── builtins.h
+│   ├── signals.h
+│   └── utils.h
+├── src/
+│   ├── main/
+│   │   └── minishell.c          # (puede mover aquí el main si prefieres)
+│   ├── input/
+│   │   └── prompt.c             # readline, historial, EOF
+│   ├── lexer/
+│   │   ├── lexer.c              # tokenización
+│   │   └── tokenizer_utils.c
+│   ├── parser/
+│   │   └── parser.c             # estructura de comandos
+│   ├── expansion/
+│   │   └── expander.c           # $VAR, $?, comillas
+│   ├── executor/
+│   │   ├── executor.c           # lógica de ejecución
+│   │   ├── redirections.c       # < > >> <<
+│   │   └── pipes.c              # manejo de |
+│   ├── builtins/
+│   │   ├── cd.c
+│   │   ├── echo.c
+│   │   ├── env.c
+│   │   ├── exit.c
+│   │   ├── export.c
+│   │   ├── pwd.c
+│   │   └── unset.c
+│   ├── signals/
+│   │   └── signals.c            # SIGINT, SIGQUIT
+│   └── utils/
+│       ├── error.c              # perror, mensajes
+│       └── memory.c             # frees, utils varios
+├── libft/                       # Tu libft aquí
