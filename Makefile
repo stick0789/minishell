@@ -6,7 +6,7 @@
 #    By: jaacosta <jaacosta@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/02 17:47:40 by jaacosta          #+#    #+#              #
-#    Updated: 2025/05/29 17:28:06 by jaacosta         ###   ########.fr        #
+#    Updated: 2025/05/29 18:02:39 by jaacosta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,12 +52,10 @@ $(OBJ_PATH)%.o	:	$(SRC_PATH)%.c Makefile libft/libft.a
 clean	:
 		$(RM) $(OBJ_PATH)
 		$(MAKE) -C libft clean
-		$(MAKE) -C minilibx-linux clean
 
 fclean	:
 		$(RM) $(NAME) $(OBJ_PATH)
 		$(MAKE) -C libft fclean
-		$(MAKE) -C minilibx-linux clean
 
 re	:
 		$(MAKE) fclean 
