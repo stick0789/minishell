@@ -6,7 +6,7 @@
 #    By: jaacosta <jaacosta@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/02 17:47:40 by jaacosta          #+#    #+#              #
-#    Updated: 2025/05/29 18:02:39 by jaacosta         ###   ########.fr        #
+#    Updated: 2025/05/29 18:05:48 by jaacosta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ LDFLAGS = -lreadline -lncurses
 AR	= ar -rcs
 RM	= rm -rf
 
-SRCS 	=  futuros_archivos.c
+#SRCS 	=  futuros_archivos.c
 	  
 SRC_PATH = ./src/
 OBJ_PATH = ./tmp/
@@ -29,7 +29,7 @@ HEADERS  = -I$(H_PATH)
 #DIRSRC	 = $(addprefix $(SRC_PATH), $(SRCS))
 #OBJS 	 = $(addprefix $(OBJ_PATH), $(SRCS:.c=.o))
 DIRSRC	 = $(shell find $(SRC_PATH) -name "*.c")
-OBJS 	 = $(patsubst $(SRC_PATH)%.c, $(OBJ_PATH)%.o, $(SRCS))
+OBJS 	 = $(patsubst $(SRC_PATH)%.c, $(OBJ_PATH)%.o, $(DIRSRC))
 
 all	:	makelib $(OBJ_PATH) $(NAME)
 
