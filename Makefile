@@ -6,14 +6,14 @@
 #    By: jaacosta <jaacosta@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/02 17:47:40 by jaacosta          #+#    #+#              #
-#    Updated: 2025/05/24 19:17:57 by jaacosta         ###   ########.fr        #
+#    Updated: 2025/05/29 17:28:06 by jaacosta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fractol
+NAME = minishell
 
 CC	= cc
-CFLAGS	= -Wall -Wextra -Werror #-g
+CFLAGS	= -Wall -Wextra -Werror
 LDFLAGS = -lreadline -lncurses
 AR	= ar -rcs
 RM	= rm -rf
@@ -26,16 +26,15 @@ H_PATH	 = ./includes
 
 HEADERS  = -I$(H_PATH)
 
-DIRSRC	 = $(addprefix $(SRC_PATH), $(SRCS))
-OBJS 	 = $(addprefix $(OBJ_PATH), $(SRCS:.c=.o))
+#DIRSRC	 = $(addprefix $(SRC_PATH), $(SRCS))
+#OBJS 	 = $(addprefix $(OBJ_PATH), $(SRCS:.c=.o))
+DIRSRC	 = $(shell find $(SRC_PATH) -name "*.c")
+OBJS 	 = $(patsubst $(SRC_PATH)%.c, $(OBJ_PATH)%.o, $(SRCS))
 
-all	:	makelib makeminilib $(OBJ_PATH) $(NAME)
+all	:	makelib $(OBJ_PATH) $(NAME)
 
 makelib	:	
 		$(MAKE) -C libft 
-		
-makeminilib :	
-		$(MAKE) -C minilibx-linux
 
 $(OBJ_PATH):
 		mkdir -p $(OBJ_PATH)
@@ -61,7 +60,7 @@ fclean	:
 		$(MAKE) -C minilibx-linux clean
 
 re	:
-		make fclean 
-		make all 
+		$(MAKE) fclean 
+		$(MAKE) all 
 		
-.PHONY	:	makelib makeminilib all clean fclean re
+.PHONY	:	makelib all clean fclean re
