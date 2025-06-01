@@ -6,7 +6,7 @@
 /*   By: jaacosta <jaacosta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 20:07:34 by jaacosta          #+#    #+#             */
-/*   Updated: 2025/05/26 18:29:25 by jaacosta         ###   ########.fr       */
+/*   Updated: 2025/06/01 20:05:18 by jaacosta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_token	*tokenizer(char *input)
 	i = 0;
 	while (input[i])
 	{
-		if (is_space(input[i])) // TD
+		if (ft_isspace(input[i])) // TD
 		{
 			i++;
 			continue ;

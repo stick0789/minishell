@@ -1,31 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   mini_lexer_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaacosta <jaacosta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/26 18:37:49 by jaacosta          #+#    #+#             */
-/*   Updated: 2025/06/01 17:07:52 by jaacosta         ###   ########.fr       */
+/*   Created: 2025/06/01 19:12:24 by jaacosta          #+#    #+#             */
+/*   Updated: 2025/06/01 19:12:48 by jaacosta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include "../includes/minishell.h"
-
-int	main(void)
+int ft_isspace(char c)
 {
-	char *input;
-
-	while (1)
-	{
-		input = readline("minishell> "); // Muestra el prompt
-		if (!input)                      // Maneja Ctrl-D (EOF)
-			break ;
-		if (*input)             // Evita guardar líneas vacías
-			add_history(input); // Añade al historial
-
-		// Procesa el input (ej: tokenización)
-		free(input); // Libera memoria
-	}
-	return (0);
-}*/
+    
+}
