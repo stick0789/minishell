@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jaacosta <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: jaacosta <jaacosta@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 18:02:27 by jaacosta          #+#    #+#              #
-#    Updated: 2024/11/06 18:46:39 by jaacosta         ###   ########.fr        #
+#    Updated: 2025/06/02 17:08:57 by jaacosta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,8 @@ SRCS = ft_strlen.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c \
 	   control_basics.c control_hexa.c control_unsignedint.c \
 	   control_voidptr.c ft_printf.c \
 	   get_next_line.c get_next_line_utils.c get_next_line_bonus.c \
-	   get_next_line_utils_bonus.c
+	   get_next_line_utils_bonus.c \
+	   ft_isspace.c ft_isoperator.c
 	 
 SRC_PATH = ./src/
 OBJ_PATH = ./tmp/

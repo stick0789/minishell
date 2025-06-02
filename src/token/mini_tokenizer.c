@@ -6,13 +6,13 @@
 /*   By: jaacosta <jaacosta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 20:07:34 by jaacosta          #+#    #+#             */
-/*   Updated: 2025/06/01 20:05:18 by jaacosta         ###   ########.fr       */
+/*   Updated: 2025/06/02 18:44:11 by jaacosta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minishell.h"
 
-t_token	*tokenizer(char *input)
+t_token	*tokenizer(char *input, t_mini *mini)
 {
 	t_token	*tokens;
 	int		i;
@@ -21,18 +21,20 @@ t_token	*tokenizer(char *input)
 	i = 0;
 	while (input[i])
 	{
-		if (ft_isspace(input[i])) // TD
+		if (ft_isspace(input[i]))
 		{
 			i++;
 			continue ;
 		}
-		if (is_operator(input[i])) // TD check op: <<, >>, &&
-			tokens = add_operator_token(input, &i, &tokens); // TD
+		if (is_operator(input[i]))
+			i = handle_operator(input, i, &tokens);
 		else if (input[i] == '\'' || input[i] == '\"')
-			tokens = add_quoted_token(input, &i, &tokens); // TD
+			i = handle_quotes(input, &i, &tokens);
 		else
-			tokens = add_word_token(input, &i, &tokens); // TD
+			i = handle_word(input, &i, &tokens);
 	}
+	add_token(&tokens, UNKNOWN, NULL);//para el toquen final
+	mini->start = tokens;
 	return (tokens);
 }
 // rl_replace_line -> util para autocompletado

@@ -6,7 +6,7 @@
 /*   By: jaacosta <jaacosta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 17:30:29 by jaacosta          #+#    #+#             */
-/*   Updated: 2025/06/01 19:11:04 by jaacosta         ###   ########.fr       */
+/*   Updated: 2025/06/02 20:16:37 by jaacosta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,11 @@ typedef enum e_token_type
 	AND,
 	OR,
 	UNKNOWN
-}	t_token_type;
+}	t_tkn_type;
 
 typedef struct s_token
 {
-	t_token_type	type;
+	t_tkn_type	type;
 	char			*value;
 	struct s_token	*next;
 }					t_token;
@@ -56,6 +56,7 @@ typedef struct s_env
 typedef struct s_mini
 {
 	t_token			*start;
+	t_token			*last_token;
 	t_env			*env;
 	t_env			*secret_env;// Variables temporales/no exportadas
 	int		in;// Descriptor de entrada actual (STDIN_FILENO)
