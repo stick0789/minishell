@@ -6,7 +6,7 @@
 /*   By: jaacosta <jaacosta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 20:07:34 by jaacosta          #+#    #+#             */
-/*   Updated: 2025/06/02 18:44:11 by jaacosta         ###   ########.fr       */
+/*   Updated: 2025/06/02 20:20:56 by jaacosta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ t_token	*tokenizer(char *input, t_mini *mini)
 			continue ;
 		}
 		if (is_operator(input[i]))
-			i = handle_operator(input, i, &tokens);
+			i = handle_operator(input, i, &tokens, mini);
 		else if (input[i] == '\'' || input[i] == '\"')
-			i = handle_quotes(input, &i, &tokens);
+			i = handle_quotes(input, &i, &tokens, mini);
 		else
-			i = handle_word(input, &i, &tokens);
+			i = handle_word(input, &i, &tokens, mini);
 	}
-	add_token(&tokens, UNKNOWN, NULL);//para el toquen final
+	add_token(&tokens, UNKNOWN, NULL, mini);//para el token final
 	mini->start = tokens;
 	return (tokens);
 }

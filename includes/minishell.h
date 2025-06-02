@@ -6,7 +6,7 @@
 /*   By: jaacosta <jaacosta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 17:30:29 by jaacosta          #+#    #+#             */
-/*   Updated: 2025/06/02 20:16:37 by jaacosta         ###   ########.fr       */
+/*   Updated: 2025/06/02 20:24:09 by jaacosta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,16 @@ typedef struct s_mini
 	int		exit;// Flag para terminar el shell
 	int		no_exec// Flag para evitar ejecución (ej: error de sintaxis)
 }				t_mini;
+
+typedef struct s_cmd
+{
+	char		**args;// Comando y argumentos (ej: ["ls", "-la"])
+	int		in_fd;
+	int		out_fd;
+	int		is_pipe;// 1 si hay pipe después
+	struct	s_cmd	*next;// Siguiente comando en la cadena
+	pid_t	pid;
+}				t_cmd;
 
 typedef struct s_signal
 {
