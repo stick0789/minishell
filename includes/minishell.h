@@ -6,7 +6,7 @@
 /*   By: jaacosta <jaacosta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 17:30:29 by jaacosta          #+#    #+#             */
-/*   Updated: 2025/06/02 20:37:33 by jaacosta         ###   ########.fr       */
+/*   Updated: 2025/06/06 18:55:13 by jaacosta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ typedef struct s_mini
 	int			last;
 	int			ret;// Código de retorno temporal
 	int			exit;// Flag para terminar el shell
-	int			no_exec// Flag para evitar ejecución (ej: error de sintaxis)
+	int			no_exec;// Flag para evitar ejecución (ej: error de sintaxis)
 }				t_mini;
 
 typedef struct s_signal

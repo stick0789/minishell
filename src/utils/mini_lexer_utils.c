@@ -6,7 +6,7 @@
 /*   By: jaacosta <jaacosta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 19:12:24 by jaacosta          #+#    #+#             */
-/*   Updated: 2025/06/02 20:36:40 by jaacosta         ###   ########.fr       */
+/*   Updated: 2025/06/06 18:57:32 by jaacosta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	add_token(t_token **tokens, t_tkn_type type, char *value, t_mini *mini)
 	t_token		*new;
 
 	if ((type == PIPE || type == AND || type == OR) && (*tokens)
-		&& (is_operator((*tokens)->type)))
+		&& (ft_isoperator((*tokens)->type)))
 	{
 		ft_putstr_fd("minishell: syntax error near unexpected token\n", 2);
 		exit_shell(mini, 258);//TD
@@ -72,17 +72,17 @@ int	handle_operator(char *input, int i, t_token **tokens, t_mini *mini)
 	len = get_operator_len(input, i, op);
 	if (ft_strncmp(op, '|', 1) == 0)
 		add_token(tokens, PIPE, op, mini);
-	else if (ft_strncmp(op, '<', 1) == 0)
+	else if (ft_strncmp(op, "<", 1) == 0)
 		add_token(tokens, REDIR_IN, op, mini);
-	else if (ft_strncmp(op, '>', 1) == 0)
+	else if (ft_strncmp(op, ">", 1) == 0)
 		add_token(tokens, REDIR_OUT, op, mini);
-	else if (ft_strncmp(op, '<<', 2) == 0)
+	else if (ft_strncmp(op, "<<", 2) == 0)
 		add_token(tokens, HEREDOC, op, mini);
-	else if (ft_strncmp(op, '>>', 2) == 0)
+	else if (ft_strncmp(op, ">>", 2) == 0)
 		add_token(tokens, APPEND, op, mini);
-	else if (ft_strncmp(op, '&&', 2) == 0)
+	else if (ft_strncmp(op, "&&", 2) == 0)
 		add_token(tokens, AND, op, mini);
-	else if (ft_strncmp(op, '||', 2) == 0)
+	else if (ft_strncmp(op, "||", 2) == 0)
 		add_token(tokens, OR, op, mini);
 	return (i);
 }
