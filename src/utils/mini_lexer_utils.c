@@ -6,7 +6,7 @@
 /*   By: jaacosta <jaacosta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 19:12:24 by jaacosta          #+#    #+#             */
-/*   Updated: 2025/06/06 18:57:32 by jaacosta         ###   ########.fr       */
+/*   Updated: 2025/06/06 19:00:00 by jaacosta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,10 @@ int	get_operator_len(char *input, int i, char *op)
 int	handle_operator(char *input, int i, t_token **tokens, t_mini *mini)
 {
 	char	op[3];
-	int		len;
+	//int		len;
 
-	len = get_operator_len(input, i, op);
-	if (ft_strncmp(op, '|', 1) == 0)
+	//len = get_operator_len(input, i, op);
+	if (ft_strncmp(op, "|", 1) == 0)
 		add_token(tokens, PIPE, op, mini);
 	else if (ft_strncmp(op, "<", 1) == 0)
 		add_token(tokens, REDIR_IN, op, mini);
